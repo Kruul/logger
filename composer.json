@@ -5,7 +5,7 @@
         "kruul",
         "logger"
     ],
-    "homepage": "https://github.com/kruul/logger",
+    "homepage": "https://github.com/kruul/logger.git",
     "license": "MIT",
     "authors": [
         {
