@@ -4,6 +4,7 @@ namespace Kruul\Logger\Writer;
   20160304:
 * Exception вынесен за пределі конструктора
 + Exceptin когда не указан путь к файлу
+* Исправлена ошибка если нет файла
 */
 
 class FileWriter{

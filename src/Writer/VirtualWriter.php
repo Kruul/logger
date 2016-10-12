@@ -15,6 +15,7 @@ Change
 class VirtualWriter{
 
   public function __construct(){
+
   }
 
   public function Write($msg){

@@ -25,6 +25,7 @@ class Logger{
        public  $writer=array();
 
        public function __construct() {
+            echo "okk";
             $this->prefix='';
             $this->addWriter(new Writer\VirtualWriter(null));
         }
