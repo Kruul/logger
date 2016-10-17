@@ -1,6 +1,6 @@
 <?php
-namespace Kruul\Logger;
-use Kruul\Logger\Writer;
+namespace Kruul;
+use Kruul\Logger\Writer\VirtualWriter;
 
 /*
 Logger - simple logger with writers support
@@ -25,9 +25,8 @@ class Logger{
        public  $writer=array();
 
        public function __construct() {
-            echo "okk";
             $this->prefix='';
-            $this->addWriter(new Writer\VirtualWriter(null));
+            $this->addWriter(new VirtualWriter(null));
         }
        public function setPrefix($prefix){
          $this->prefix=$prefix;
