@@ -12,6 +12,7 @@ Edited: 16.07.2015
 Change
 20160304: + Добавлен виртуальный Writer для случая когда ни один из врайтеров не задействован.
 20160728: * Перенос и перевод каредки игнорируются в сообщении
+20170112: * сообщение конвертируется в json если массив
 
 Sample:
         $log=new Logger();
@@ -39,29 +40,30 @@ class Logger{
         }
 
        public function debug($message){
-            $this->write("DEBG", $this->prefix.$message);
+            $this->write("DEBG", $message);
             return $this;
         }
        public function error($message){
-            $this->write("ERRR", $this->prefix.$message);
+            $this->write("ERRR", $message);
             return $this;
         }
        public function critical($message){
-
-            $this->write("CRIT", $this->prefix.$message);
-
+            $this->write("CRIT", $message);
             return $this;
         }
        public function warning($message){
-            $this->write("WARN", $this->prefix.$message);
+            $this->write("WARN", $message);
             return $this;
         }
        public function info($message){
-            $this->write("INFO", $this->prefix.$message);
+            $this->write("INFO", $message);
             return $this;
         }
        private function write($status, $message) {
             $date = date('[Y-m-d H:i:s]');
+            if (is_array($message)) $message=json_encode($message,JSON_UNESCAPED_UNICODE);
+            if ($this->prefix) $message='('.$this->prefix.') '.$message;
+
             $msg = sprintf("%s: [%4s] - %s",$date,$status,str_replace(["\r","\n"],'',$message)). PHP_EOL;
             foreach($this->writer as $writer){
                $writer->Write($msg);

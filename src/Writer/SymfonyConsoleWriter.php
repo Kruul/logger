@@ -11,7 +11,7 @@ class SymfonyConsoleWriter{
 
         public function Write($msg){
 
-         $this->output->write($msg);
+         $this->output->write('<fg=green>'.$msg.'</>');
         }
 
 
