@@ -17,7 +17,9 @@ class FileWriter{
 
   public function Write($msg){
     if (empty($this->logfile)) return ;
-    if(!is_file($this->logfile)) {file_put_contents($this->logfile, '', FILE_APPEND);}
+    if(!is_file($this->logfile)) {
+        if(@\touch($this->logfile)===false) throw new \Exception("LOGGER ERROR: Can't create log", 1);
+    }
     if(!is_writable($this->logfile)){
         throw new \Exception("LOGGER ERROR: Can't write to log", 1);
     }
