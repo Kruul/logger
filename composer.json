@@ -1,6 +1,6 @@
 {
     "name": "kruul/logger",
-    "description": ":package_description",
+    "description": "Logger - simple logger with writers support",
     "keywords": [
         "kruul",
         "logger"
@@ -15,7 +15,7 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability":"dev",
+    "minimum-stability":"@dev",
     "require": {
         "php" : ">=5.3.0"
     },
