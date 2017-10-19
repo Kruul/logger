@@ -5,7 +5,6 @@
         "kruul",
         "logger"
     ],
-    "version" : "1.0.0",
     "homepage": "https://github.com/kruul/logger.git",
     "license": "MIT",
     "authors": [
